@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.feedback.MainActivity"
+    >
+
+
+   <EditText
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/name"
+       android:hint="Name"
+       android:inputType="textPersonName"
+       android:imeOptions="actionNext"/>
+
+   <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mobile"
+        android:hint="Mobile"
+        android:layout_below="@+id/name"
+        android:inputType="phone"
+        android:maxLength="10"
+       android:digits="0123456789"/>
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/mobile"
+       android:id="@+id/listHeader"
+       android:layout_marginTop="10dp">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:id="@+id/head">
+
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="0.1"
+               android:orientation="vertical"
+               android:gravity="left">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/dateHeader"
+                   android:text="Date"
+                   android:textColor="@color/colorPrimaryDark"
+                   android:layout_marginLeft="20dp"/>
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_height="match_parent"
+               android:layout_weight="0.1"
+               android:gravity="left">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/itemHeader"
+                   android:text="Items"
+                   android:layout_toRightOf="@+id/dateHeader"
+                   android:layout_toEndOf="@+id/dateHeader"
+                   android:textColor="@color/colorPrimaryDark"
+
+                   />
+           </LinearLayout>
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/ratingHeader"
+               android:layout_alignParentTop="true"
+               android:text="Ratings"
+               android:layout_toRightOf="@+id/itemHeader"
+               android:layout_toEndOf="@+id/itemHeader"
+               android:textColor="@color/colorPrimaryDark"
+               android:gravity="center"
+               android:layout_marginRight="50dp"/>
+       </LinearLayout>
+
+       <View
+           android:id="@+id/divider"
+           android:layout_marginTop="2dp"
+           android:layout_width="fill_parent"
+           android:layout_height="1dp"
+           android:background="@color/colorPrimaryDark"
+           android:layout_below="@+id/head"/>
+
+   </RelativeLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listView"
+        android:layout_below="@+id/listHeader">
+    </ListView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/none"
+        android:text="No items there.."
+        android:gravity="center"
+        android:layout_below="@+id/listView"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        >
+
+    </LinearLayout>
+
+</RelativeLayout>
